@@ -7,13 +7,17 @@ var todosCtrl = require("../controllers/todos");
 
 // GET / todos
 router.get("/", todosCtrl.index);
-// get/todos/new   <--- define before Show route
+// GET/todos/new   <--- define before Show route
 router.get("/new", todosCtrl.new);
-
-// GET / todos/:id
+// GET /todos/:id
 router.get("/:id", todosCtrl.show);
+// GET/todos/:id/edit
+router.get("/:id/edit", todosCtrl.edit);
 // POST/todos
 router.post("/", todosCtrl.create);
-
+// DELETE/todos/:id
+router.delete("/:id", todosCtrl.delete);
+// PUT/todos/:id
+router.put("/:id", todosCtrl.update)
 
 module.exports = router;
