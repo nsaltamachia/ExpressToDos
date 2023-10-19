@@ -12,6 +12,7 @@ module.exports = {
 };
 
 function update(req, res) {
+  req.body.done = !!req.body.done
   Todo.update(req.params.id, req.body),
     res.redirect(`/todos/${req.params.id}`);
 }

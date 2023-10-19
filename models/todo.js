@@ -15,7 +15,8 @@
 function update(id, updatedTodo) {
    id = parseInt(id);
   const todo = todos.find(todo => todo.id === id);
-  todo.todo = updatedTodo.todo;
+  Object.assign(todo, updatedTodo);
+  //todo.todo = updatedTodo.todo;    old way of doing it
  }
 function deleteOne(id) {
   // All properties attached to the req.params are strings!
